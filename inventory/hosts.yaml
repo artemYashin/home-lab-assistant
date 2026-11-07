@@ -1,0 +1,30 @@
+# Homelab Topology & Extended Metadata
+# Fast lookup tables for nodes and services are maintained in:
+#   - inventory/nodes.tsv    (synced to AGENTS.md via ./scripts/hl-inventory.sh)
+#   - inventory/services.tsv (synced to AGENTS.md via ./scripts/hl-inventory.sh)
+#
+# Use this file for rich, arbitrary topology details (ZFS pool layouts, VLANs,
+# hardware specs, Kubernetes clusters, backup targets, or custom notes).
+# Never put raw passwords or secret tokens in this file (use .env or secrets/<id>.env).
+
+topology:
+  domain: lab.local
+  subnets: {}
+    # lan: 192.168.1.0/24
+    # vpn: 100.64.0.0/10
+
+nodes: {}
+  # <node-name>:
+  #   hardware: ...
+  #   paths:
+  #     stacks: /opt/stacks
+  #     appdata: /opt/appdata
+  #   storage:
+  #     zfs_pools: []
+  #     mounts: []
+
+clusters: {}
+  # <cluster-name>:
+  #   type: k3s | talos | proxmox
+  #   context: default
+  #   nodes: []
